@@ -101,15 +101,6 @@ if (!('webkitSpeechRecognition' in window)) {
             }
         }
 
-        if (interim_transcript.indexOf(match_string) > -1) {
-            match_results.innerHTML = "Possible match found for: " + match_string;
-        }
-
-        if (final_transcript.indexOf(match_string) > -1) {
-            alert(match_string);
-            match_results.innerHTML = "Match found for: " + match_string;
-        }
-
         final_transcript = capitalize(final_transcript);
         final_span.innerHTML = linebreak(final_transcript);
         interim_span.innerHTML = linebreak(interim_transcript);
@@ -160,7 +151,3 @@ function showInfo(s) {
         info.style.visibility = 'hidden';
     }
 }
-
-var match_string = "next";
-match_results = document.getElementById('match_results');
-match_results.innerHTML = "No match found for '" + match_string + "'";
